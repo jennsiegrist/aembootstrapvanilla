@@ -25,5 +25,5 @@ docs/
 
 
 # Others
-*.Ds_Store
+*.DS_Store
 *.idea
