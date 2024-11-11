@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Created-By: Apache Jackrabbit FileVault - Package Maven Plugin 1.3.6
+Build-Jdk-Spec: 11
+Implementation-Title: Vanilla AEM Bootstrap - UI apps
+Implementation-Version: 0.0.1-SNAPSHOT
+Content-Package-Type: application
+Content-Package-Id: com.vanilla:vanilla.ui.apps:0.0.1-SNAPSHOT
+Content-Package-Description: UI apps package for Vanilla AEM Bootstrap
+Content-Package-Roots: /apps/vanilla/clientlibs,/apps/vanilla/components
+ ,/apps/vanilla/i18n
+

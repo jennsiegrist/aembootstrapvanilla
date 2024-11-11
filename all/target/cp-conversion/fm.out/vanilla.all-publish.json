@@ -1,0 +1,12 @@
+{
+  "id":"com.vanilla:vanilla.all:slingosgifeature:publish:0.0.1-SNAPSHOT",
+  "configurations":  {
+    "org.apache.sling.jcr.resource.internal.JcrResourceResolverFactoryImpl":    {
+      "resource.resolver.mapping":[
+        "/content/vanilla/</",
+        "/:/"
+      ],
+      ":configurator:content-package-origins":"com.vanilla:vanilla.all:0.0.1-SNAPSHOT|com.vanilla:vanilla.ui.config:0.0.1-SNAPSHOT"
+    }
+  }
+}

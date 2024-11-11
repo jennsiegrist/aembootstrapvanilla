@@ -1,0 +1,53 @@
+{
+  "id":"com.vanilla:vanilla.all:slingosgifeature:0.0.1-SNAPSHOT",
+  "bundles":[
+    {
+      "id":"com.vanilla:vanilla.core:0.0.1-SNAPSHOT",
+      "Bundle-SymbolicName":"vanilla.core",
+      "Bundle-Version":"0.0.1.SNAPSHOT",
+      "start-order":"20",
+      "content-package-origins":"com.vanilla:vanilla.all:0.0.1-SNAPSHOT"
+    }
+  ],
+  "configurations":  {
+    "org.apache.sling.commons.log.LogManager.factory.config~vanilla":    {
+      "org.apache.sling.commons.log.names":[
+        "com.vanilla"
+      ],
+      "org.apache.sling.commons.log.level":"INFO",
+      "org.apache.sling.commons.log.file":"logs/error.log",
+      "org.apache.sling.commons.log.additiv":"false",
+      ":configurator:content-package-origins":"com.vanilla:vanilla.all:0.0.1-SNAPSHOT|com.vanilla:vanilla.ui.config:0.0.1-SNAPSHOT"
+    },
+    "com.adobe.cq.wcm.core.components.internal.servlets.TableOfContentsFilter~vanilla":    {
+      "enabled":"true",
+      ":configurator:content-package-origins":"com.vanilla:vanilla.all:0.0.1-SNAPSHOT|com.vanilla:vanilla.ui.config:0.0.1-SNAPSHOT"
+    }
+  },
+  "repoinit:TEXT|true":[
+    "# origin=com.vanilla:vanilla.all:0.0.1-SNAPSHOT|com.vanilla:vanilla.ui.config:0.0.1-SNAPSHOT source=org.apache.sling.jcr.repoinit.RepositoryInitializer~vanilla",
+    "create path (sling:OrderedFolder) /content/dam/vanilla",
+    "create path (nt:unstructured) /content/dam/vanilla/jcr:content",
+    "set properties on /content/dam/vanilla/jcr:content",
+    "  set cq:conf{String} to /conf/vanilla",
+    "  set jcr:title{String} to \"Vanilla AEM Bootstrap\"",
+    "end"
+  ],
+  "content-packages:ARTIFACTS|true":[
+    "com.vanilla:vanilla.ui.config:zip:cp2fm-converted:0.0.1-SNAPSHOT",
+    "com.vanilla:vanilla.ui.apps:zip:cp2fm-converted:0.0.1-SNAPSHOT",
+    "com.vanilla:vanilla.all:zip:cp2fm-converted:0.0.1-SNAPSHOT"
+  ],
+  "api-regions:JSON|false":[
+    {
+      "name":"global",
+      "exports":[
+        "com.vanilla.core.filters",
+        "com.vanilla.core.listeners",
+        "com.vanilla.core.models",
+        "com.vanilla.core.schedulers",
+        "com.vanilla.core.servlets"
+      ]
+    }
+  ]
+}

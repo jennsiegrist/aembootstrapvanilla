@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Created-By: Apache Jackrabbit FileVault - Package Maven Plugin 1.3.6
+Build-Jdk-Spec: 11
+Implementation-Title: Vanilla AEM Bootstrap - UI config
+Implementation-Version: 0.0.1-SNAPSHOT
+Content-Package-Type: container
+Content-Package-Id: com.vanilla:vanilla.ui.config:0.0.1-SNAPSHOT
+Content-Package-Description: UI config package for Vanilla AEM Bootstrap
+Content-Package-Roots: /apps/vanilla/osgiconfig
+

@@ -1,0 +1,41 @@
+Manifest-Version: 1.0
+Bundle-Category: Vanilla AEM Bootstrap
+Bundle-Description: Core bundle for Vanilla AEM Bootstrap
+Bundle-ManifestVersion: 2
+Bundle-Name: Vanilla AEM Bootstrap - Core
+Bundle-SymbolicName: vanilla.core
+Bundle-Version: 0.0.1.SNAPSHOT
+Export-Package: com.vanilla.core.filters;version="1.0";uses:="javax.se
+ rvlet",com.vanilla.core.listeners;version="1.0";uses:="org.apache.sli
+ ng.api.resource.observation",com.vanilla.core.models;version="1.0";us
+ es:="javax.annotation,org.apache.sling.api.resource,org.apache.sling.
+ models.annotations,org.apache.sling.models.annotations.injectorspecif
+ ic",com.vanilla.core.schedulers;version="1.0",com.vanilla.core.servle
+ ts;version="1.0";uses:="javax.servlet,org.apache.sling.api,org.apache
+ .sling.api.servlets"
+Import-Package: javax.annotation;version="0.0.0",com.day.cq.wcm.api;ve
+ rsion="[1.31,2)",com.vanilla.core.filters;version="[1.0,2)",com.vanil
+ la.core.listeners;version="[1.0,2)",com.vanilla.core.schedulers;versi
+ on="[1.0,2)",com.vanilla.core.servlets;version="[1.0,2)",javax.servle
+ t;version="[2.6,3)",org.apache.sling.api;version="[2.3,3)",org.apache
+ .sling.api.request;version="[2.7,3)",org.apache.sling.api.resource;ve
+ rsion="[2.13,3)",org.apache.sling.api.resource.observation;version="[
+ 1.2,2)",org.apache.sling.api.servlets;version="[2.4,3)",org.apache.sl
+ ing.models.annotations;version="[1.5,2)",org.apache.sling.models.anno
+ tations.injectorspecific;version="[1.1,2)",org.slf4j;version="[1.7,2)
+ "
+Provide-Capability: osgi.service;objectClass:List<String>="java.lang.R
+ unnable",osgi.service;objectClass:List<String>="javax.servlet.Filter"
+ ;uses:="javax.servlet",osgi.service;objectClass:List<String>="javax.s
+ ervlet.Servlet";uses:="javax.servlet",osgi.service;objectClass:List<S
+ tring>="org.apache.sling.api.resource.observation.ResourceChangeListe
+ ner";uses:="org.apache.sling.api.resource.observation"
+Require-Capability: osgi.extender;filter:="(&(osgi.extender=osgi.compo
+ nent)(version>=1.5.0)(!(version>=2.0.0)))",osgi.ee;filter:="(&(osgi.e
+ e=JavaSE)(version=11))"
+Service-Component: OSGI-INF/com.vanilla.core.filters.LoggingFilter.xml
+ ,OSGI-INF/com.vanilla.core.listeners.SimpleResourceListener.xml,OSGI-
+ INF/com.vanilla.core.schedulers.SimpleScheduledTask.xml,OSGI-INF/com.
+ vanilla.core.servlets.SimpleServlet.xml
+Sling-Model-Classes: com.vanilla.core.models.HelloWorldModel
+
