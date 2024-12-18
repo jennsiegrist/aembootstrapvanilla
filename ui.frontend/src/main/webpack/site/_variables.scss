@@ -1,18 +1,216 @@
 
-//== Font
-
+//== Font Core
 $font-family:           "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-size:             16px;
+$font-size:             1rem;
 $font-height:           1.5;
+$font-size-base:        1rem !default; // Assumes browser default, typically `16px`
+$font-size-lg:          ($font-size-base * 1.25) !default;
+$font-size-sm:          ($font-size-base * .875) !default;
 
-//== Color
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
 
-// Normal mode
-$color-foreground:      #202020;
-$color-background:      #ECECEC;
-$color-link:            #2020E0;
+$font-weight-base:            $font-weight-normal !default;
+$line-height-base:            1.5 !default;
 
-// Dark mode
-$color-foreground-dark: invert($color-foreground);
-$color-background-dark: invert($color-background);
-$color-link-dark:       invert($color-link);
+
+//== Colors
+$white:    #fff;
+$white-10: rgba($white,.1) !default;
+$white-25: rgba($white,.25) !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000;
+$black-10: rgba($black,.1) !default;
+
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
+
+//== Color Themes
+$primary:   #375251;
+$secondary: #F4965F;
+$sea:       #74A0A0 !default;
+$light:     #D5F0F0;
+$desert:    #B58C74 !default;
+
+$color-foreground:      $white;
+$color-background: $primary;
+
+$custom-colors: (
+  $sea: $sea,
+  $desert: $desert
+);
+
+
+$whites: (
+    10: $white-10,
+    25: $white-25
+) !default;
+
+
+// Set a specific jump point for requesting color jumps
+  $theme-color-interval:      8% !default;
+
+
+//== Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+  $enable-caret:              true !default;
+  $enable-rounded:            true !default;
+  $enable-shadows:            false !default;
+  $enable-gradients:          false !default;
+  $enable-transitions:        true !default;
+  $enable-hover-media-query:  false !default;
+  $enable-grid-classes:       true !default;
+  $enable-print-styles:       true !default;
+
+
+//== Spacing
+//
+// Control default styling of most Bootstrap elements by modifying these variables.
+
+  $spacer: 1rem !default;
+  $spacers: () !default;
+
+// stylelint-disable-next-line scss/dollar-variable-default
+  $spacers: map-merge(
+                  (
+                          0: 0,
+                          1: ($spacer * .25),
+                          2: ($spacer * .5),
+                          3: $spacer,
+                          4: ($spacer * 1.5),
+                          5: ($spacer * 3)
+                  ),
+                  $spacers
+  );
+
+// This variable affects the `.h-*` and `.w-*` classes.
+  $sizes: () !default;
+
+// stylelint-disable-next-line scss/dollar-variable-default
+  $sizes: map-merge(
+                  (
+                          25: 25%,
+                          50: 50%,
+                          75: 75%,
+                          100: 100%,
+                          auto: auto
+                  ),
+                  $sizes
+  );
+
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+  $spacer: 1rem !default;
+  $spacers: (
+          0: 0,
+          1: ($spacer * .25),
+          2: ($spacer * .5),
+          3: $spacer,
+          4: ($spacer * 1.5),
+          5: ($spacer * 2),
+          6: ($spacer * 2.5),
+          7: ($spacer * 3),
+          8: ($spacer * 3.5),
+          9: ($spacer * 4),
+          10: ($spacer * 4.5),
+          11: ($spacer * 5),
+          12: ($spacer * 5.5),
+          13: ($spacer * 6),
+          14: ($spacer * 6.5),
+          15: ($spacer * 7),
+          16: ($spacer * 7.5),
+          17: ($spacer * 8),
+          18: ($spacer * 8.5),
+          19: ($spacer * 9),
+          20: ($spacer * 9.5),
+          21: ($spacer * 10)
+  ) !default;
+
+// This variable affects the `.h-*` and `.w-*` classes.
+  $sizes: (
+          auto: auto,
+          10: 10%,
+          20: 20%,
+          25: 25%,
+          30: 30%,
+          33: 33.33333%,
+          40: 40%,
+          50: 50%,
+          60: 60%,
+          66: 66.66667%,
+          70: 70%,
+          75: 75%,
+          80: 80%,
+          90: 90%,
+          100: 100%
+  ) !default;
+
+// Opacity
+  $opacities: (
+          0: 0,
+          1: 0.1,
+          2: 0.2,
+          3: 0.3,
+          4: 0.4,
+          5: 0.5,
+          6: 0.6,
+          7: 0.7,
+          8: 0.8,
+          9: 0.9,
+          10: 1
+  ) !default;
+
+
+//== Links
+
+$link-color:                $primary;
+$link-decoration:           none !default;
+$link-hover-color:          darken($primary, 15%);
+$link-hover-decoration:     underline !default;
+
+
+//=== Fonts =================
+$headings-margin-bottom:      ($spacer / 2) !default;
+$headings-font-family:        $brandfont;
+$headings-font-weight:        500 !default;
+$headings-line-height:        1.3 !default;
+$headings-color:              $primary !default;
+
+$lead-font-size:              ($font-size-base * 1.25) !default;
+$lead-font-weight:            300 !default;
+$small-font-size:             80% !default;
+$blockquote-small-color:      $gray-600 !default;
+$blockquote-font-size:        ($font-size-base * 1.25) !default;
+
+$h1-font-size:                $font-size-base * 3.5 !default;
+$h2-font-size:                $font-size-base * 3 !default;
+$h3-font-size:                $font-size-base * 2.75 !default;
+$h4-font-size:                $font-size-base * 2.5 !default;
+$h5-font-size:                $font-size-base * 2 !default;
+$h6-font-size:                $font-size-base * 1.5 !default;
+

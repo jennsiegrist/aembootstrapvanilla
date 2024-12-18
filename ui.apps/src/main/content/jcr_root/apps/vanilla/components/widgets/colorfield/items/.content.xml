@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+    xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <white
+        jcr:primaryType="nt:unstructured"
+        value="#fff"/>
+    <black
+        jcr:primaryType="nt:unstructured"
+        value="#000"/>
+    <blue
+        jcr:primaryType="nt:unstructured"
+        value="#9bcaeb"/>
+    <indigo
+        jcr:primaryType="nt:unstructured"
+        value="#005eb8"/>
+    <purple
+        jcr:primaryType="nt:unstructured"
+        value="#6f2b8d"/>
+    <pink
+        jcr:primaryType="nt:unstructured"
+        value="#ce0058"/>
+    <red
+        jcr:primaryType="nt:unstructured"
+        value="#c60000"/>
+    <orange
+        jcr:primaryType="nt:unstructured"
+        value="#f7a827"/>
+    <yellow
+        jcr:primaryType="nt:unstructured"
+        value="#feeb3d"/>
+    <green
+        jcr:primaryType="nt:unstructured"
+        value="#00a34e"/>
+    <teal
+        jcr:primaryType="nt:unstructured"
+        value="#0090c1"/>
+    <cyan
+        jcr:primaryType="nt:unstructured"
+        value="#00a9e0"/>
+    <sky
+        jcr:primaryType="nt:unstructured"
+        value="#e7f2fa"/>
+    <light-gray
+        jcr:primaryType="nt:unstructured"
+        value="#f5f5f5"/>
+    <dark-gray
+        jcr:primaryType="nt:unstructured"
+        value="#666"/>
+</jcr:root>

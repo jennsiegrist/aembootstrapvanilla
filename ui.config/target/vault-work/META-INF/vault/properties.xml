@@ -4,7 +4,7 @@
 <comment>Vanilla AEM Bootstrap - UI config</comment>
 <entry key="cloudManagerTarget">none</entry>
 <entry key="allowIndexDefinitions">false</entry>
-<entry key="created">2024-11-11T09:32:27.936Z</entry>
+<entry key="created">2024-12-12T15:08:05.556Z</entry>
 <entry key="groupId">com.vanilla</entry>
 <entry key="name">vanilla.ui.config</entry>
 <entry key="description">UI config package for Vanilla AEM Bootstrap</entry>

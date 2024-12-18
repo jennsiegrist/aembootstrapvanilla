@@ -1,6 +1,7 @@
 'use strict';
 
 const path = require('path');
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TSConfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -57,11 +58,13 @@ module.exports = {
                     {
                         loader: 'postcss-loader',
                         options: {
-                            plugins() {
-                                return [
-                                    require('autoprefixer')
-                                ];
-                            }
+                            postcssOptions: {
+                                plugins() {
+                                    return [
+                                        require('autoprefixer')
+                                    ];
+                                }
+                            },
                         }
                     },
                     {
@@ -89,6 +92,12 @@ module.exports = {
             patterns: [
                 { from: path.resolve(__dirname, SOURCE_ROOT + '/resources'), to: './clientlib-site/' }
             ]
+        }),
+        new webpack.ProvidePlugin({
+            // inject ES5 modules as global vars
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery'
         })
     ],
     stats: {

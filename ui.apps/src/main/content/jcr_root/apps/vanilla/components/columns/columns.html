@@ -1,0 +1,34 @@
+<div data-sly-test="${wcmmode.edit}">[ Start of ${component.title} Component ]</div>
+<sly data-sly-test.container="${properties.layout == 'container' || !properties.layout ? 'container' : container}"/>
+<sly data-sly-test.container="${properties.layout == 'none' ? '' : container}"/>
+<sly data-sly-test.container="${(properties.fullWidth || properties.layout == 'full') ? 'container-fluid' : container}"/>
+<!-- for legacy reasons properties.fullWidth was a checkbox previously -->
+
+<sly data-sly-test.custom="${properties.cols == 'custom' ? true : false}"/>
+
+<sly data-sly-test.verticalPaddingColUnified="${((!properties.removeLegacyPadding && properties.verticalPadding) || (properties.paddingBottomCol == properties.paddingTopCol)) ? true : false}"/>
+<sly data-sly-test.verticalPaddingColUnifiedValue="${verticalPaddingColUnified ? (properties.removeLegacyPadding ? properties.paddingTopCol : properties.verticalPadding) : ''}"/>
+<sly data-sly-test.verticalPaddingColUnifiedValue="${'{0}{1}' @ format=['py-',verticalPaddingColUnifiedValue]}"/>
+<sly data-sly-test.verticalPaddingColTop="${'{0}{1}' @ format=['pt-',properties.paddingTopCol]}"/>
+<sly data-sly-test.verticalPaddingColBottom="${'{0}{1}' @ format=['pb-',properties.paddingBottomCol]}"/>
+<sly data-sly-test.verticalPaddingColValue="${'{0} {1}' @ format=[verticalPaddingColTop,verticalPaddingColBottom]}"/>
+<sly data-sly-test.verticalPaddingColValue="${verticalPaddingColUnified ? verticalPaddingColUnifiedValue : verticalPaddingColValue}"/>
+
+<sly data-sly-test.verticalPaddingRowUnified="${(properties.paddingTopRow == properties.paddingBottomRow) ? true : false}"/>
+<sly data-sly-test.verticalPaddingRowUnifiedValue="${'{0}{1}' @ format=['py-',properties.paddingTopRow]}"/>
+<sly data-sly-test.verticalPaddingRowTop="${'{0}{1}' @ format=['pt-',properties.paddingTopRow]}"/>
+<sly data-sly-test.verticalPaddingRowBottom="${'{0}{1}' @ format=['pb-',properties.paddingBottomRow]}"/>
+<sly data-sly-test.verticalPaddingRowValue="${'{0} {1}' @ format=[verticalPaddingRowTop,verticalPaddingRowBottom]}"/>
+<sly data-sly-test.verticalPaddingRowValue="${verticalPaddingRowUnified ? verticalPaddingRowUnifiedValue : verticalPaddingRowValue}"/>
+
+<sly data-sly-use.customColumns="customColumns.html"/>
+<sly data-sly-use.fixedColumns="fixedColumns.html"/>
+<!-- for legacy reasons properties.fullWidth was a checkbox previously -->
+
+<div class="columns-component ${container}" id="${properties.sectionId}">
+    <sly data-sly-test="${custom}"
+         data-sly-call="${customColumns.template @ verticalPaddingRowValue=verticalPaddingRowValue, verticalPaddingColValue=verticalPaddingColValue}"></sly>
+    <sly data-sly-test="${!custom}"
+         data-sly-call="${fixedColumns.template @ verticalPaddingRowValue=verticalPaddingRowValue, verticalPaddingColValue=verticalPaddingColValue}"></sly>
+</div>
+<div data-sly-test="${wcmmode.edit}">[ End of ${component.title} Component ]</div>

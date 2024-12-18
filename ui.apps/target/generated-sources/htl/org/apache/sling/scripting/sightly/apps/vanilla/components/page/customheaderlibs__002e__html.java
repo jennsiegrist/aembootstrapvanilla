@@ -35,7 +35,7 @@ public final class customheaderlibs__002e__html extends RenderUnit {
 // Main Template Body -----------------------------------------------------------------------------
 
 Object _global_clientlib = null;
-out.write("\n");
+out.write("\n<script type=\"text/javascript\">\n    var Vanilla = Vanilla || {};\n\n  // Initialise JS global variables\n  Vanilla.Components = {};\n  Vanilla.Constants = {};\n</script>\n");
 _global_clientlib = renderContext.call("use", "core/wcm/components/commons/v1/templates/clientlib.html", obj());
 out.write("\n    ");
 {
@@ -48,7 +48,7 @@ out.write("\n    ");
         }
     }
 }
-out.write("\n\n\n");
+out.write("\n\n\n\n\n");
 {
     Object var_resourcecontent2 = renderContext.call("includeResource", "contexthub", obj().with("resourceType", "granite/contexthub/components/contexthub"));
     out.write(renderContext.getObjectModel().toString(var_resourcecontent2));

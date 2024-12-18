@@ -3,4 +3,5 @@
     <filter root="/apps/vanilla/clientlibs"/>
     <filter root="/apps/vanilla/components"/>
     <filter root="/apps/vanilla/i18n"/>
+    <filter root="/apps/vanilla/templates"/>
 </workspaceFilter>

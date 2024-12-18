@@ -1,0 +1,176 @@
+
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin opacity($trans) {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$trans * 100})";
+  filter: alpha(opactiy = $trans * 100);
+  -khtml-opacity: $trans;
+  -moz-opacity: $trans;
+  opacity: $trans;
+}
+
+@mixin rounded-element {
+  @include border-radius(100px);
+}
+
+
+// To use CSS3's Flexbox
+// ------------------------------------------------------------------------
+// For more information: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+// Examples:
+// .wrapper { @include flexbox(); }
+// .item    { @include order(1); }
+// .item    { @include order(2); }
+//
+// The flexbox() mixin defaults to column but has the following options available:
+//   - row
+//   - row-reverse
+//   - column
+//   - column-reverse;
+@mixin flexbox() {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: flex;
+}
+
+@mixin flex-direction($value) {
+  -webkit-flex-direction: $value;
+  flex-direction: $value;
+}
+
+@mixin flex-wrap($value) {
+  -webkit-flex-wrap: $value;
+  -moz-flex-wrap: $value;
+  -ms-flex-wrap: $value;
+  flex-wrap: $value;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex: $values;
+  -webkit-flex: $values;
+  -ms-flex: $values;
+  flex: $values;
+}
+@mixin flex-order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+@mixin flex-align-items($value: center) {
+  -webkit-align-items: $value;
+  -moz-align-items: $value;
+  -ms-align-items: $value;
+  -ms-flex-align: $value;
+  align-items: $value;
+}
+@mixin flex-justify-content($value: center) {
+  -webkit-justify-content: $value;
+  -moz-justify-content: $value;
+  -ms-flex-pack: $value;
+  justify-content: $value;
+}
+@mixin flex-align-content($value: center) {
+  -webkit-align-content: $value;
+  -moz-align-content: $value;
+  -ms-align-content: $value;
+  align-content: $value;
+}
+@mixin flex-align-self($value) {
+  -webkit-align-self: $value;
+  align-self: $value;
+}
+
+@mixin box-shadow($string) {
+  box-shadow: $string;
+  -webkit-box-shadow: $string;
+  -moz-box-shadow: $string;
+}
+
+@mixin transform($args...) {
+  -webkit-transform: $args;
+  -moz-transform: $args;
+  -ms-transform: $args;
+  -o-transform: $args;
+  transform: $args;
+}
+
+@mixin transform-scale($value) {
+  @include transform(scale(#{$value}));
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin transition-ease-out($time) {
+  @include transition(all #{$time}ms ease-out);
+}
+
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+@mixin hover {
+  &:hover { @content; }
+}
+
+@mixin hover-focus {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin color-variant($parent, $color) {
+  #{$parent} {
+    color: $color !important;
+  }
+  a#{$parent} {
+    @include hover-focus {
+      color: darken($color, 10%) !important;
+    }
+  }
+}
+
+
+@mixin bg-variant($parent, $color) {
+  #{$parent} {
+    background-color: $color !important;
+  }
+  a#{$parent},
+  button#{$parent} {
+    @include hover-focus {
+      background-color: darken($color, 10%) !important;
+    }
+  }
+}
+
+@mixin bg-gradient-variant($parent, $color) {
+  #{$parent} {
+    background: $color linear-gradient(180deg, mix($body-bg, $color, 15%), $color) repeat-x !important;
+  }
+}

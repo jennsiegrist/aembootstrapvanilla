@@ -3,7 +3,7 @@
 <properties>
 <comment>Vanilla AEM Bootstrap - All</comment>
 <entry key="allowIndexDefinitions">false</entry>
-<entry key="created">2024-11-11T09:32:28.351Z</entry>
+<entry key="created">2024-12-12T15:08:05.923Z</entry>
 <entry key="groupId">com.vanilla</entry>
 <entry key="name">vanilla.all</entry>
 <entry key="description">All content package for Vanilla AEM Bootstrap</entry>

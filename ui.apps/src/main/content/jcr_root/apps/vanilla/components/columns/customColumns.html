@@ -1,0 +1,10 @@
+<template data-sly-template.template="${ @ verticalPaddingRowValue, verticalPaddingColValue}">
+    <div class="row ${properties.nogutters ? 'no-gutters' : ''} ${verticalPaddingRowValue} ${properties.horizontalAlignment}"
+         data-sly-use.multifieldHelper="${'com.vanilla.models.MultifieldHelper' @ multifieldNodeName='customColumns'}">
+        <sly data-sly-list.par="${multifieldHelper.ItemsList}">
+            <div class="${par.mobileHide ? 'd-none d-md-block' : ''} ${par.tabletWidth} ${par.desktopWidth} ${verticalPaddingColValue} ${properties.verticalAlignment}"
+                 data-sly-resource="${'{0}{1}' @ format=['col_',parList.count], resourceType='wcm/foundation/components/responsivegrid'}">
+            </div>
+        </sly>
+    </div>
+</template>

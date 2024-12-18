@@ -1,1 +1,106 @@
+.container {
+  --bs-gutter-x: 0;
+}
+
 .cmp-container {}
+
+
+@media(min-width: 576px) {
+  .container,.container-sm {
+    max-width: 100%;
+  }
+}
+
+@media(min-width: 768px) {
+  .container,.container-md,.container-sm {
+    max-width: 100%;
+  }
+}
+
+@media(min-width: 992px) {
+  .container,.container-lg,.container-md,.container-sm {
+    max-width: 100%;
+  }
+}
+
+@media(min-width: 1200px) {
+  .container,.container-lg,.container-md,.container-sm,.container-xl {
+    max-width: 100%;
+  }
+}
+
+@media(min-width: 1400px) {
+  .container,.container-lg,.container-md,.container-sm,.container-xl,.container-xxl {
+    max-width: 100%;
+  }
+}
+
+/*
+.container-component {
+  &.h-40-vh {
+    height: 40vh;
+  }
+  &.h-50-vh {
+    height: 50vh;
+  }
+  &.h-60-vh {
+    height: 60vh;
+  }
+  &.h-70-vh {
+    height: 70vh;
+  }
+  &.h-80-vh {
+    height: 80vh;
+  }
+  &.h-90-vh {
+    height: 90vh;
+  }
+  &.h-100-vh {
+    height: 100vh;
+  }
+  .bg-black-40 {
+    background-color: rgba($black, .4);
+  }
+  .bg-black-50 {
+    background-color: rgba($black, .5);
+  }
+  .bg-black-60 {
+    background-color: rgba($black, .6);
+  }
+  .bg-vertical-gradient-10-60 {
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba($black,.6)), to(rgba($black,.1)));
+    background: -webkit-linear-gradient(bottom, rgba($black,.6), rgba($black,.1));
+    background: -o-linear-gradient(bottom, rgba($black,.6), rgba($black,.1));
+    background: linear-gradient(0deg, rgba($black,.6), rgba($black,.1));
+  }
+  .bg-vertical-gradient-10-80 {
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba($black,.8)), to(rgba($black,.1)));
+    background: -webkit-linear-gradient(bottom, rgba($black,.8), rgba($black,.1));
+    background: -o-linear-gradient(bottom, rgba($black,.8), rgba($black,.1));
+    background: linear-gradient(0deg, rgba($black,.8), rgba($black,.1));
+  }
+  .bg-diagonal-gradient-10-60 {
+    background: -webkit-linear-gradient(45deg, rgba($black,.6), rgba($black,.1));
+    background: -o-linear-gradient(45deg, rgba($black,.6), rgba($black,.1));
+    background: linear-gradient(45deg, rgba($black,.6), rgba($black,.1));
+  }
+  .bg-diagonal-gradient-10-80 {
+    background: -webkit-linear-gradient(45deg, rgba($black,.8), rgba($black,.1));
+    background: -o-linear-gradient(45deg, rgba($black,.8), rgba($black,.1));
+    background: linear-gradient(45deg, rgba($black,.8), rgba($black,.1));
+  }
+  .bg-blue-vertical-gradient {
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba($primary,.95)), to(rgba($sea,.95)));
+    background: -webkit-linear-gradient(bottom, rgba($primary,.95), rgba($sea,.95));
+    background: -o-linear-gradient(bottom, rgba($primary,.95), rgba($sea,.95));
+    background: linear-gradient(0deg, rgba($primary,.95), rgba($sea,.95));
+  }
+  .bg-blue-diagonal-gradient {
+    background: -webkit-linear-gradient(315deg, rgba($primary,.95), rgba($sea,.95));
+    background: -o-linear-gradient(315deg, rgba($primary,.95), rgba($sea,.95));
+    background: linear-gradient(135deg, rgba($primary,.95), rgba($sea,.95));
+  }
+}
+
+*/
+

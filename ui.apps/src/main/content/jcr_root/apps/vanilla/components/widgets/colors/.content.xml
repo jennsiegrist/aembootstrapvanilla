@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+    fieldLabel="Color"
+    name="./color">
+    <items jcr:primaryType="nt:unstructured">
+        <primary
+            jcr:primaryType="nt:unstructured"
+            text="Primary"
+            value="primary"/>
+        <secondary
+            jcr:primaryType="nt:unstructured"
+            text="Secondary"
+            value="secondary"/>
+        <sea
+            jcr:primaryType="nt:unstructured"
+            text="Sea"
+            value="sea"/>
+        <white
+            jcr:primaryType="nt:unstructured"
+            text="White"
+            value="white"/>
+        <light-gray
+            jcr:primaryType="nt:unstructured"
+            text="Light grey"
+            value="light"/>
+         <light
+            jcr:primaryType="nt:unstructured"
+            text="Light "
+            value="light"/>
+        <desert
+            jcr:primaryType="nt:unstructured"
+            text="Desert "
+            value="desert"/>
+    </items>
+</jcr:root>

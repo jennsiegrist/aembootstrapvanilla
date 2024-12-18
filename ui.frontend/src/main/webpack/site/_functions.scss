@@ -1,0 +1,66 @@
+
+
+
+
+//Custom color function
+@each $color, $value in $colors {
+  @include color-variant('.c-#{$color}', $value);
+}
+@each $color, $value in $colors {
+  @each $gray, $value in $grays {
+    @include color-variant('.c-gray-#{$gray}', $value);
+  }
+  @each $white, $value in $whites {
+    @include color-variant('.c-white-#{$white}', $value);
+  }
+}
+
+// Add colors to bg-
+@each $color, $value in $colors {
+  @include bg-variant('.bg-#{$color}', $value);
+}
+
+
+//Custom function to handle Opacities
+@each $opacity, $value in $opacities {
+  .opacity-#{$opacity} {
+    @include opacity($value)
+  }
+}
+
+@each $color, $value in $theme-colors {
+  @include bg-variant(".bg-#{$color}", $value);
+}
+
+@if $enable-gradients {
+  @each $color, $value in $theme-colors {
+    @include bg-gradient-variant(".bg-gradient-#{$color}", $value);
+  }
+}
+
+.bg-white {
+  background-color: $white !important;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+@function theme-color($key: "primary") {
+  @return map-get($theme-colors, $key);
+}
+
+@function gray($key: "100") {
+  @return map-get($grays, $key);
+}
+
+.fade-in {
+  opacity: 0;
+  -webkit-transform: translateY(3rem);
+  -ms-transform: translateY(3rem);
+  transform: translateY(3rem);
+  -webkit-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+

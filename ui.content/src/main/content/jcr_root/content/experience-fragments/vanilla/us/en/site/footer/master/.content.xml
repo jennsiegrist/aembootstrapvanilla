@@ -13,6 +13,13 @@
             jcr:primaryType="nt:unstructured"
             sling:resourceType="vanilla/components/container"
             layout="responsiveGrid">
+            <navigation
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="vanilla/components/navigation"
+                collectAllPages="false"
+                navigationRoot="/content/vanilla/us/en"
+                skipNavigationRoot="false"
+                structureDepth="1"/>
             <separator
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="vanilla/components/separator"/>

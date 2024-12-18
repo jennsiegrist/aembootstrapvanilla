@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Columns"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <tabs
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+                            type="nav"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <layout
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Settings"
+                                sling:resourceType="granite/ui/components/foundation/section">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <sectionId
+                                            jcr:primaryType="nt:unstructured"
+                                            granite:class="margin-t-1-imp"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <sectionId
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Must be unique in a page. Used to create anchor's to this specific part of the page."
+                                                fieldLabel="Section ID"
+                                                name="./sectionId"/>
+                                        </items>
+                                    </sectionId>
+                                    <colSettings
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Column Layout"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <layout
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Number of columns"
+                                                granite:class="vanilla-dropdown-showhide"
+                                                name="./cols">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    vanilla-dropdown-showhide-target=".mode-showhide-target"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <col-50
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="1 Col (50%)"
+                                                            value="50"/>
+                                                    <col-58
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="1 Col (58%)"
+                                                            value="58"/>
+                                                    <col-66
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="1 Col (66%)"
+                                                            value="66"/>
+                                                    <col-83
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="1 Col (83%)"
+                                                            value="83"/>
+                                                    <col-100
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="1 Col (100%)"
+                                                            value="100"/>
+                                                    <col-50-50
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="2 Cols (50% -  50%)"
+                                                            value="50-50"/>
+                                                    <col-75-25
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="2 Cols (75% - 25%)"
+                                                            value="75-25"/>
+                                                    <col-25-75
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="2 Cols (25% - 75%)"
+                                                            value="25-75"/>
+                                                    <col-66-33
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="2 Cols (66% - 33%)"
+                                                            value="66-33"/>
+                                                    <col-33-66
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="2 Cols (33% - 66%)"
+                                                            value="33-66"/>
+                                                    <col-33-33-33
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="3 Cols (33% - 33% - 33%)"
+                                                            value="33-33-33"/>
+                                                    <col-25-50-25
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="3 Cols (25% - 50% - 25%)"
+                                                            value="25-50-25"/>
+                                                    <col-25-25-25-25
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="4 Cols (25% - 25% - 25% - 25%)"
+                                                            value="25-25-25-25"/>
+                                                    <custom
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Custom"
+                                                            value="custom"/>
+                                                </items>
+                                            </layout>
+                                            <fullwidth
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Layout width"
+                                                name="./layout">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <fluid
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Fluid width (15px padding on left and right)"
+                                                        value="full"/>
+                                                    <standard
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Fixed Content width"
+                                                        selected="{Boolean}true"
+                                                        value="container"/>
+                                                    <none
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Full width (no padding)"
+                                                        value="none"/>
+                                                </items>
+                                            </fullwidth>
+                                            <gutters
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                name="./nogutters"
+                                                text="No space between columns"
+                                                defaultChecked="{Boolean}false"
+                                                uncheckedValue="{Boolean}false"
+                                                value="{Boolean}true"/>
+                                            <verticalAlignment
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    fieldLabel="Vertical alignment"
+                                                    name="./verticalAlignment">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <top
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Top"
+                                                        selected="{Boolean}true"
+                                                        value=""/>
+                                                    <center
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Center"
+                                                        value="align-self-center"/>
+                                                    <bottom
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Bottom"
+                                                        value="align-self-end"/>
+                                                </items>
+                                            </verticalAlignment>
+                                        </items>
+                                    </colSettings>
+                                </items>
+                            </layout>
+                            <spacing
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Spacing"
+                                sling:resourceType="granite/ui/components/foundation/section">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <rowSpacing
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Row Spacing"
+                                        granite:class="margin-b-6"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <container
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
+                                                <layout
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <column1
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/section"
+                                                        class="custom-section u-coral-noPadding">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <paddingTop
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                    fieldLabel="Padding top"
+                                                                    name="./paddingTopRow">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <pt0 jcr:primaryType="nt:unstructured"
+                                                                         selected="{Boolean}true"
+                                                                         text="0"
+                                                                         value="0"/>
+                                                                    <pt1 jcr:primaryType="nt:unstructured"
+                                                                         text="1"
+                                                                         value="1"/>
+                                                                    <pt2 jcr:primaryType="nt:unstructured"
+                                                                         text="2"
+                                                                         value="2"/>
+                                                                    <pt3 jcr:primaryType="nt:unstructured"
+                                                                         text="3"
+                                                                         value="3"/>
+                                                                    <pt4 jcr:primaryType="nt:unstructured"
+                                                                         text="4"
+                                                                         value="4"/>
+                                                                    <pt5 jcr:primaryType="nt:unstructured"
+                                                                         text="5"
+                                                                         value="5"/>
+                                                                    <pt6 jcr:primaryType="nt:unstructured"
+                                                                         text="6"
+                                                                         value="6"/>
+                                                                    <pt7 jcr:primaryType="nt:unstructured"
+                                                                         text="7"
+                                                                         value="7"/>
+                                                                    <pt8 jcr:primaryType="nt:unstructured"
+                                                                         text="8"
+                                                                         value="8"/>
+                                                                    <pt9 jcr:primaryType="nt:unstructured"
+                                                                         text="9"
+                                                                         value="9"/>
+                                                                    <pt10 jcr:primaryType="nt:unstructured"
+                                                                          text="10"
+                                                                          value="10"/>
+                                                                    <pt11 jcr:primaryType="nt:unstructured"
+                                                                          text="11"
+                                                                          value="11"/>
+                                                                    <pt12 jcr:primaryType="nt:unstructured"
+                                                                          text="12"
+                                                                          value="12"/>
+                                                                    <pt13 jcr:primaryType="nt:unstructured"
+                                                                          text="13"
+                                                                          value="13"/>
+                                                                    <pt14 jcr:primaryType="nt:unstructured"
+                                                                          text="14"
+                                                                          value="14"/>
+                                                                    <pt15 jcr:primaryType="nt:unstructured"
+                                                                          text="15"
+                                                                          value="15"/>
+                                                                </items>
+                                                            </paddingTop>
+                                                        </items>
+                                                    </column1>
+                                                    <column2
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/section"
+                                                            class="custom-section margin-left">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <paddingBottom
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                    fieldLabel="Padding bottom"
+                                                                    name="./paddingBottomRow">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <pb0 jcr:primaryType="nt:unstructured"
+                                                                         selected="{Boolean}true"
+                                                                         text="0"
+                                                                         value="0"/>
+                                                                    <pb1 jcr:primaryType="nt:unstructured"
+                                                                         text="1"
+                                                                         value="1"/>
+                                                                    <pb2 jcr:primaryType="nt:unstructured"
+                                                                         text="2"
+                                                                         value="2"/>
+                                                                    <pb3 jcr:primaryType="nt:unstructured"
+                                                                         text="3"
+                                                                         value="3"/>
+                                                                    <pb4 jcr:primaryType="nt:unstructured"
+                                                                         text="4"
+                                                                         value="4"/>
+                                                                    <pb5 jcr:primaryType="nt:unstructured"
+                                                                         text="5"
+                                                                         value="5"/>
+                                                                    <pb6 jcr:primaryType="nt:unstructured"
+                                                                         text="6"
+                                                                         value="6"/>
+                                                                    <pb7 jcr:primaryType="nt:unstructured"
+                                                                         text="7"
+                                                                         value="7"/>
+                                                                    <pb8 jcr:primaryType="nt:unstructured"
+                                                                         text="8"
+                                                                         value="8"/>
+                                                                    <pb9 jcr:primaryType="nt:unstructured"
+                                                                         text="9"
+                                                                         value="9"/>
+                                                                    <pb10 jcr:primaryType="nt:unstructured"
+                                                                          text="10"
+                                                                          value="10"/>
+                                                                    <pb11 jcr:primaryType="nt:unstructured"
+                                                                          text="11"
+                                                                          value="11"/>
+                                                                    <pb12 jcr:primaryType="nt:unstructured"
+                                                                          text="12"
+                                                                          value="12"/>
+                                                                    <pb13 jcr:primaryType="nt:unstructured"
+                                                                          text="13"
+                                                                          value="13"/>
+                                                                    <pb14 jcr:primaryType="nt:unstructured"
+                                                                          text="14"
+                                                                          value="14"/>
+                                                                    <pb15 jcr:primaryType="nt:unstructured"
+                                                                          text="15"
+                                                                          value="15"/>
+                                                                </items>
+                                                            </paddingBottom>
+                                                        </items>
+                                                    </column2>
+                                                </items>
+                                            </container>
+                                        </items>
+                                    </rowSpacing>
+                                    <colSpacing
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Column Spacing"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <container
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/container">
+                                                <layout
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <column1
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/section"
+                                                            class="custom-section u-coral-noPadding">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <paddingTop
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                    fieldLabel="Padding top"
+                                                                    name="./paddingTopCol">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <pt0 jcr:primaryType="nt:unstructured"
+                                                                         selected="{Boolean}true"
+                                                                         text="0"
+                                                                         value="0"/>
+                                                                    <pt1 jcr:primaryType="nt:unstructured"
+                                                                         text="1"
+                                                                         value="1"/>
+                                                                    <pt2 jcr:primaryType="nt:unstructured"
+                                                                         text="2"
+                                                                         value="2"/>
+                                                                    <pt3 jcr:primaryType="nt:unstructured"
+                                                                         text="3"
+                                                                         value="3"/>
+                                                                    <pt4 jcr:primaryType="nt:unstructured"
+                                                                         text="4"
+                                                                         value="4"/>
+                                                                    <pt5 jcr:primaryType="nt:unstructured"
+                                                                         text="5"
+                                                                         value="5"/>
+                                                                    <pt6 jcr:primaryType="nt:unstructured"
+                                                                         text="6"
+                                                                         value="6"/>
+                                                                    <pt7 jcr:primaryType="nt:unstructured"
+                                                                         text="7"
+                                                                         value="7"/>
+                                                                    <pt8 jcr:primaryType="nt:unstructured"
+                                                                         text="8"
+                                                                         value="8"/>
+                                                                    <pt9 jcr:primaryType="nt:unstructured"
+                                                                         text="9"
+                                                                         value="9"/>
+                                                                    <pt10 jcr:primaryType="nt:unstructured"
+                                                                          text="10"
+                                                                          value="10"/>
+                                                                    <pt11 jcr:primaryType="nt:unstructured"
+                                                                          text="11"
+                                                                          value="11"/>
+                                                                    <pt12 jcr:primaryType="nt:unstructured"
+                                                                          text="12"
+                                                                          value="12"/>
+                                                                    <pt13 jcr:primaryType="nt:unstructured"
+                                                                          text="13"
+                                                                          value="13"/>
+                                                                    <pt14 jcr:primaryType="nt:unstructured"
+                                                                          text="14"
+                                                                          value="14"/>
+                                                                    <pt15 jcr:primaryType="nt:unstructured"
+                                                                          text="15"
+                                                                          value="15"/>
+                                                                </items>
+                                                            </paddingTop>
+                                                        </items>
+                                                    </column1>
+                                                    <column2
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/section"
+                                                            class="custom-section margin-left">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <paddingBottom
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                    fieldLabel="Padding bottom"
+                                                                    name="./paddingBottomCol">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <pb0 jcr:primaryType="nt:unstructured"
+                                                                         selected="{Boolean}true"
+                                                                         text="0"
+                                                                         value="0"/>
+                                                                    <pb1 jcr:primaryType="nt:unstructured"
+                                                                         text="1"
+                                                                         value="1"/>
+                                                                    <pb2 jcr:primaryType="nt:unstructured"
+                                                                         text="2"
+                                                                         value="2"/>
+                                                                    <pb3 jcr:primaryType="nt:unstructured"
+                                                                         text="3"
+                                                                         value="3"/>
+                                                                    <pb4 jcr:primaryType="nt:unstructured"
+                                                                         text="4"
+                                                                         value="4"/>
+                                                                    <pb5 jcr:primaryType="nt:unstructured"
+                                                                         text="5"
+                                                                         value="5"/>
+                                                                    <pb6 jcr:primaryType="nt:unstructured"
+                                                                         text="6"
+                                                                         value="6"/>
+                                                                    <pb7 jcr:primaryType="nt:unstructured"
+                                                                         text="7"
+                                                                         value="7"/>
+                                                                    <pb8 jcr:primaryType="nt:unstructured"
+                                                                         text="8"
+                                                                         value="8"/>
+                                                                    <pb9 jcr:primaryType="nt:unstructured"
+                                                                         text="9"
+                                                                         value="9"/>
+                                                                    <pb10 jcr:primaryType="nt:unstructured"
+                                                                          text="10"
+                                                                          value="10"/>
+                                                                    <pb11 jcr:primaryType="nt:unstructured"
+                                                                          text="11"
+                                                                          value="11"/>
+                                                                    <pb12 jcr:primaryType="nt:unstructured"
+                                                                          text="12"
+                                                                          value="12"/>
+                                                                    <pb13 jcr:primaryType="nt:unstructured"
+                                                                          text="13"
+                                                                          value="13"/>
+                                                                    <pb14 jcr:primaryType="nt:unstructured"
+                                                                          text="14"
+                                                                          value="14"/>
+                                                                    <pb15 jcr:primaryType="nt:unstructured"
+                                                                          text="15"
+                                                                          value="15"/>
+                                                                </items>
+                                                            </paddingBottom>
+                                                        </items>
+                                                    </column2>
+                                                    <column3
+                                                            jcr:primaryType="nt:unstructured"
+                                                            granite:class="custom-section u-coral-noMargin u-coral-padding-vertical"
+                                                            sling:resourceType="granite/ui/components/foundation/section">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <removeLegacyPadding
+                                                                jcr:primaryType="nt:unstructured"
+                                                                granite:id="removeLegacyButtonId"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/button"
+                                                                icon="closeCircle"
+                                                                text="Remove legacy padding"/>
+                                                            <removeLegacyValueId
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                                granite:id="removeLegacyValueId"
+                                                                name="./removeLegacyPadding"/>
+                                                        </items>
+                                                    </column3>
+                                                </items>
+                                            </container>
+                                        </items>
+                                    </colSpacing>
+
+                                </items>
+                            </spacing>
+                            <ordering
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Ordering"
+                                    granite:class="mode-showhide-target"
+                                    sling:resourceType="granite/ui/components/foundation/section">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    showhidetargetvalue=" 50-50 75-25 25-75 66-33 33-66 33-33-33 25-50-25 25-25-25-25"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <colOrder
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Column order in mobile"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <column1
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    fieldLabel="1st Column"
+                                                    name="./column1Order">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <hide
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Hide on Mobile"
+                                                        value="d-none d-md-block"/>
+                                                    <first
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="1st on Mobile"
+                                                        selected="{Boolean}true"
+                                                        value="order-1"/>
+                                                    <second
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="2nd on Mobile"
+                                                        value="order-2"/>
+                                                    <third
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="3rd on Mobile"
+                                                        granite:class="mode-showhide-target"
+                                                        value="order-3">
+                                                        <granite:data
+                                                            jcr:primaryType="nt:unstructured"
+                                                            showhidetargetvalue="33-33-33 25-50-25 25-25-25-25"/>
+                                                    </third>
+                                                    <fourth
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="4th on Mobile"
+                                                        granite:class="mode-showhide-target"
+                                                        value="order-4">
+                                                        <granite:data
+                                                            jcr:primaryType="nt:unstructured"
+                                                            showhidetargetvalue="25-25-25-25"/>
+                                                    </fourth>
+                                                </items>
+                                            </column1>
+                                            <column2
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    fieldLabel="2nd Column"
+                                                    granite:class="mode-showhide-target"
+                                                    name="./column2Order">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    showhidetargetvalue=" 50-50 75-25 25-75 66-33 33-66 33-33-33 25-50-25 25-25-25-25"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <hide
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Hide on Mobile"
+                                                        value="d-none d-md-block"/>
+                                                    <first
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="1st on Mobile"
+                                                        value="order-1"/>
+                                                    <second
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="2nd on Mobile"
+                                                        selected="{Boolean}true"
+                                                        value="order-2"/>
+                                                    <third
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="3rd on Mobile"
+                                                        granite:class="mode-showhide-target"
+                                                        value="order-3">
+                                                        <granite:data
+                                                            jcr:primaryType="nt:unstructured"
+                                                            showhidetargetvalue="33-33-33 25-50-25 25-25-25-25"/>
+                                                    </third>
+                                                    <fourth
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="4th on Mobile"
+                                                        granite:class="mode-showhide-target"
+                                                        value="order-4">
+                                                        <granite:data
+                                                            jcr:primaryType="nt:unstructured"
+                                                            showhidetargetvalue="25-25-25-25"/>
+                                                    </fourth>
+                                                </items>
+                                            </column2>
+                                            <column3
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    fieldLabel="3rd Column"
+                                                    granite:class="mode-showhide-target"
+                                                    name="./column3Order">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    showhidetargetvalue="33-33-33 25-50-25 25-25-25-25"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <hide
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Hide on Mobile"
+                                                        value="d-none d-md-block"/>
+                                                    <first
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="1st on Mobile"
+                                                        value="order-1"/>
+                                                    <second
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="2nd on Mobile"
+                                                        value="order-2"/>
+                                                    <third
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="3rd on Mobile"
+                                                        selected="{Boolean}true"
+                                                        granite:class="mode-showhide-target"
+                                                        value="order-3">
+                                                        <granite:data
+                                                            jcr:primaryType="nt:unstructured"
+                                                            showhidetargetvalue="33-33-33 25-50-25 25-25-25-25"/>
+                                                    </third>
+                                                    <fourth
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="4th on Mobile"
+                                                        granite:class="mode-showhide-target"
+                                                        value="order-4">
+                                                        <granite:data
+                                                            jcr:primaryType="nt:unstructured"
+                                                            showhidetargetvalue="25-25-25-25"/>
+                                                    </fourth>
+                                                </items>
+                                            </column3>
+                                            <column4
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="4th Column"
+                                                granite:class="mode-showhide-target"
+                                                name="./column4Order">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    showhidetargetvalue="25-25-25-25"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <hide
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Hide on Mobile"
+                                                        value="d-none d-md-block"/>
+                                                    <first
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="1st on Mobile"
+                                                        value="order-1"/>
+                                                    <second
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="2nd on Mobile"
+                                                        value="order-2"/>
+                                                    <third
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="3rd on Mobile"
+                                                        value="order-3"/>
+                                                    <fourth
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="4th on Mobile"
+                                                        selected="{Boolean}true"
+                                                        granite:class="mode-showhide-target"
+                                                        value="order-4">
+                                                        <granite:data
+                                                            jcr:primaryType="nt:unstructured"
+                                                            showhidetargetvalue="25-25-25-25"/>
+                                                    </fourth>
+                                                </items>
+                                            </column4>
+                                        </items>
+                                    </colOrder>
+                                </items>
+                            </ordering>
+                        <customize
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Customize"
+                                granite:class="mode-showhide-target"
+                                sling:resourceType="granite/ui/components/foundation/section">
+                            <granite:data
+                                jcr:primaryType="nt:unstructured"
+                                showhidetargetvalue="custom"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <customize
+                                            jcr:primaryType="nt:unstructured"
+                                            granite:class="margin-t-1-imp"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <horizontalAlignment
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    fieldLabel="Horizontal alignment"
+                                                    name="./horizontalAlignment">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <top
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Left"
+                                                        selected="{Boolean}true"
+                                                        value="d-flex justify-content-start"/>
+                                                    <center
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Center"
+                                                        value="d-flex justify-content-center"/>
+                                                    <right
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Right"
+                                                        value="d-flex justify-content-end"/>
+                                                    <justify
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Justify"
+                                                        value="d-flex justify-content-between"/>
+                                                    <distribute
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Distribute"
+                                                        value="d-flex justify-content-around"/>
+                                                </items>
+                                            </horizontalAlignment>
+                                            <columns
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                                    class="full-width"
+                                                    eaem-nested=""
+                                                    fieldDescription="Click 'Add Field' to add new column"
+                                                    fieldLabel="Add columns">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    jcr:title="Column"
+                                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                                    name="./customColumns">
+                                                    <layout
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                        method="absolute"/>
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <column
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/container">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <desktopWidth
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                        fieldLabel="Width on desktop"
+                                                                        name="./desktopWidth">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <width8
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="8% (1 columns)"
+                                                                            value="col-lg-1"/>
+                                                                        <width16
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="16% (2 columns)"
+                                                                            value="col-lg-2"/>
+                                                                        <width25
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="25% (3 columns)"
+                                                                            value="col-lg-3"/>
+                                                                        <width33
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="33% (4 columns)"
+                                                                            selected="{Boolean}true"
+                                                                            value="col-lg-4"/>
+                                                                        <width42
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="42% (5 columns)"
+                                                                            value="col-lg-5"/>
+                                                                        <width50
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="50% (6 columns)"
+                                                                            value="col-lg-6"/>
+                                                                        <width58
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="58% (7 columns)"
+                                                                            value="col-lg-7"/>
+                                                                        <width66
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="66% (8 columns)"
+                                                                            value="col-lg-8"/>
+                                                                        <width75
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="75% (9 columns)"
+                                                                            value="col-lg-9"/>
+                                                                        <width83
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="83% (10 columns)"
+                                                                            value="col-lg-10"/>
+                                                                        <width92
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="92% (11 columns)"
+                                                                            value="col-lg-11"/>
+                                                                        <width100
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="100% (12 columns)"
+                                                                            value="col-lg-12"/>
+                                                                    </items>
+                                                                </desktopWidth>
+                                                                <tabletWidth
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                        fieldLabel="Width on tablet"
+                                                                        name="./tabletWidth">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <width50
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="50%"
+                                                                            selected="{Boolean}true"
+                                                                            value="col-md-6"/>
+                                                                        <width100
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="100%"
+                                                                            value="col-md-12"/>
+                                                                    </items>
+                                                                </tabletWidth>
+                                                                <mobileHide
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                    name="./mobileHide"
+                                                                    text="Hide column in mobile"
+                                                                    defaultChecked="{Boolean}false"
+                                                                    uncheckedValue="{Boolean}false"
+                                                                    value="{Boolean}true"/>
+                                                            </items>
+                                                        </column>
+                                                    </items>
+                                                </field>
+                                            </columns>
+                                        </items>
+                                    </customize>
+                                </items>
+                        </customize>
+                        </items>
+                    </tabs>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

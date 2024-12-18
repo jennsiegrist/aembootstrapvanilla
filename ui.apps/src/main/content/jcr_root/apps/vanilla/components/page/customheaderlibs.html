@@ -13,8 +13,17 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
+<script type="text/javascript">
+    var Vanilla = Vanilla || {};
+
+  // Initialise JS global variables
+  Vanilla.Components = {};
+  Vanilla.Constants = {};
+</script>
 <sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html">
     <sly data-sly-call="${clientlib.css @ categories='vanilla.base'}"/>
 </sly>
+
+
 
 <sly data-sly-resource="${'contexthub' @ resourceType='granite/contexthub/components/contexthub'}"/>

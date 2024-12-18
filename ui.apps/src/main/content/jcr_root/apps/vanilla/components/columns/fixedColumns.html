@@ -1,0 +1,10 @@
+<template data-sly-template.template="${ @ verticalPaddingRowValue, verticalPaddingColValue}">
+    <div class="row ${util.parentClass.class} ${properties.nogutters ? 'no-gutters' : ''} ${verticalPaddingRowValue} ${properties.horizontalAlignment}"
+         data-sly-use.util="${'columns.js' @ selection = properties.cols, column1Order=properties.column1Order, column2Order=properties.column2Order, column3Order=properties.column3Order, column4Order=properties.column4Order}">
+        <sly data-sly-list.par="${util.layout}">
+            <div class="${par.class} ${verticalPaddingColValue} ${properties.verticalAlignment}"
+                 data-sly-resource="${'{0}{1}' @ format=['col_',parList.count], resourceType='wcm/foundation/components/responsivegrid'}">
+            </div>
+        </sly>
+    </div>
+</template>
